@@ -4,7 +4,7 @@ const SetUserContext = React.createContext(null);
 const UserContext = React.createContext(null);
 export const useUserContext = () => {
   const user = React.useContext(UserContext);
-  if (!user) throw new Error("Used outside of useer context");
+  if (!user) throw new Error("Used outside of user context");
   return user;
 };
 
