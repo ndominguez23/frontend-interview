@@ -47,8 +47,12 @@ You should not take more than 4 hours of time on this, even if you feel incomple
 Please, answer the following questions in this readme, underneath the question
 
 1. Name a newer feature of javascript that you believe is extra useful, and discuss how you have used it in this project, or how you would use it if needed.
+- Async/Await is a godsend. It truly makes writing clean, readable, maintable code possible by reducing the need for callback functions. Even Promises can get ugly really quickly. Here, I only used it to make the API call, but in other cases I have "promisified" async functions that only work with callbacks to allow myself to call the same function again based on the output. Without async/await, making the amount of repeat calls dynamic would be impossible.
 
 2. What are 3 things you think `React` does very poorly? What tools do this better, if any?
+ - Asynchronous calls/functions don't behave the way you always expect, sometimes even if you safeguard by keeping them in lifecycle methods/useEffect hooks or use thunks/sagas. I'm not too familiar with other frameworks to say whether they're any better, unfortunately.
+ - Out of the box optimizations against re-rendering. It's really on the developer to write code specifically to minimize re-renders. That said, it provides some tools to do just that.
+ - Too many third-party libraries. This has more to do with React not having certain functionality and so third-party libraries are built to fill the gap. Unfortunately that means it's easy to get large bundles because people are liberal with the dependencies. 
 
 ## Submissions
 
