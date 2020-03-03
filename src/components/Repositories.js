@@ -1,21 +1,6 @@
 import * as React from "react";
 import RepositorySearchResults from "./RepositorySearchResults";
 
-/**
- * Once given an input, fetch the repositories we searched
- * via:
- *
- * https://api.github.com/search/repositories?q={}
- *
- * This should not kickoff a fetch for every keystroke, but rather when
- * typing stops.
- *
- * Documentation for the search api is here:
- * https://developer.github.com/v3/search/#search-repositories
- * 
- * Full name | description | Stargazers Count | Open issues Count | match score
- */
-
 const Repositories = () => {
   const TIME_OUT = 2000;
   const Q_URL = "https://api.github.com/search/repositories?q=" ;
@@ -36,7 +21,6 @@ const Repositories = () => {
       setSearchResults(results);
     } catch (e) {
       setError('Could not get search results. Try again.');
-      console.log(JSON.stringify(e, null, 2));
     }
   };
 
@@ -78,6 +62,7 @@ const Repositories = () => {
 
   React.useEffect(() => {
     updateTimer();
+    // eslint-disable-next-line
   }, [terms])
 
   return (
@@ -94,7 +79,7 @@ const Repositories = () => {
       />
       {error && <p>Error: {error}</p>}
       {searchResults ? (
-        <RepositorySearchResults searchResults={[]} />
+        <RepositorySearchResults searchResults={searchResults} />
       ) : (
         <div>Enter some text to search github repositories. Use commas to separate key words.</div>
       )}

@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import Home from "./Home";
 import Profile from "./Profile";
 import Repositories from "./Repositories";
+import RepoDetailCard from "./RepoDetailCard";
 
 const AuthenticatedApplication = () => {
   return (
@@ -15,9 +16,11 @@ const AuthenticatedApplication = () => {
           <Profile />
         </Route>
 
-        <Route path="/repositories">
+        <Route exact path="/repositories">
           <Repositories />
+          <Route path="/:repoId" component={RepoDetailCard}/>
         </Route>
+
 
         <Route path="/">
           <Home />

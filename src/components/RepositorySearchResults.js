@@ -1,9 +1,16 @@
 import * as React from "react";
+import RepoOverviewCard from './RepoOverviewCard';
 
-const RepositorySearchResults = () => {
+const RepositorySearchResults = ({searchResults}) => {
   return (
     <div>
-      <p>Hello</p>
+      {searchResults.map((item) => 
+        <RepoOverviewCard
+          details={item}
+          key={item.id}
+          id={item.id}
+        />
+      )}
     </div>
   );
 };
