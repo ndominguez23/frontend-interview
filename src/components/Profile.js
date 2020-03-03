@@ -30,7 +30,7 @@ const Profile = () => {
         <input
           name="email"
           value={user.email}
-          placeholder='Email'
+          placeholder="Email"
           onChange={e => {
             setUser({...user, email: e.target.value});
           }}
@@ -38,7 +38,7 @@ const Profile = () => {
         <input
           name="name"
           value={user.name}
-          placeholder='Name'
+          placeholder="Name"
           onChange={e => {
             setUser({...user, name: e.target.value});
           }}

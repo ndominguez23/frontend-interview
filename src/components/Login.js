@@ -38,7 +38,7 @@ const Login = () => {
         <input
           name="email"
           value={user.email}
-          placeholder='Email'
+          placeholder="Email"
           onChange={e => {
             setUser({...user, email: e.target.value});
           }}
@@ -46,7 +46,7 @@ const Login = () => {
         <input
           name="password"
           value={user.password}
-          placeholder='Password'
+          placeholder="Password"
           onChange={e => {
             setUser({...user, password: e.target.value});
           }}
